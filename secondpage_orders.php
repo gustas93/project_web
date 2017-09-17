@@ -86,8 +86,14 @@
       while(mysqli_stmt_fetch($stmt)){
 
 
-
-
+        $first_name = htmlspecialchars($first_name, ENT_QUOTES);
+        $last_name = htmlspecialchars($last_name, ENT_QUOTES);
+        $email = htmlspecialchars($email, ENT_QUOTES);
+        $home_address = htmlspecialchars($home_address, ENT_QUOTES);
+        $zip = htmlspecialchars($zip, ENT_QUOTES);
+        $phone_number = htmlspecialchars($phone_number, ENT_QUOTES);
+        $amount = htmlspecialchars($amount, ENT_QUOTES);
+    
 
         printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>",
          $id, $first_name, $last_name, $email, $home_address, $zip, $phone_number, $amount);
