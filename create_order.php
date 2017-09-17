@@ -41,12 +41,23 @@ $stmt->bind_param('ssssssd', $first_name, $last_name, $email, $home_address, $zi
 
 
 if ($stmt->execute() === true ) {
+?>
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta charset="utf-8">
+  </head>
+  <body>
+	<p>Ačiū, informaciją gavome, su Jumis susisieksime per 3 darbo dienas!<br> 
+	Galite grįžti į pagrindinį puslapį.<br> 
+    Gražios dienos :)</p>
+</body>
+ </html>
 
-
-	echo "Ačiū, informaciją gavome, su Jumis susisieksime per 3 darbo dienas!" . "<br>" . 
-	"Galite grįžti į pagrindinį puslapį." . "<br>" . "Gražios dienos :)";
+<?php
 } else {
-	exit("DB klaida."); 
+	exit("DB klaida: " . $sql . "<br>" . $conn->error); 
 }
 
 $conn->close();
+
